@@ -22,18 +22,13 @@ class Blockchain {
       const { timestamp, lastHash, hash, data } = chain[i];
       const actualLastHash = chain[i - 1].hash;
 
-      if (lastHash !== actualLastHash) {
-        return false;
-      }
+      if (lastHash !== actualLastHash) return false;
 
       const validatedHash = cryptoHash(timestamp, lastHash, data);
 
-      if (hash !== validatedHash) {
-        return false;
-      }
-
-      return true;
+      if (hash !== validatedHash) return false;
     }
+    return true;
   }
 }
 
