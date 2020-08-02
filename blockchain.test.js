@@ -8,7 +8,7 @@ describe("Blockchain", () => {
     blockchain = new Blockchain();
     newChain = new Blockchain();
 
-    originalChain = blockhain.chain;
+    originalChain = blockchain.chain;
   });
 
   it("contains a `chain` Arrays instance", () => {
@@ -75,6 +75,7 @@ describe("Blockchain", () => {
         expect(blockchain.chain).toEqual(originalChain);
       });
     });
+
     describe("when the new chain is longer", () => {
       beforeEach(() => {
         newChain.addBlock({ data: "Bears" });
@@ -91,6 +92,7 @@ describe("Blockchain", () => {
           expect(blockchain.chain).toEqual(originalChain);
         });
       });
+
       describe("and the chain is valid", () => {
         it("replaces the chain", () => {
           blockchain.replaceChain(newChain.chain);
