@@ -2,6 +2,7 @@ const redis = require("redis");
 
 const CHANNELS = {
   TEST: "TEST",
+  BLOCKCHAIN: "BLOCKCHAIN",
 };
 
 class PubSub {
