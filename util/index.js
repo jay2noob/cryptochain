@@ -1,5 +1,5 @@
 const EC = require("elliptic").ec;
 
-const ec = new EC("secp25k1");
+const ec = new EC("secp256k1");
 
 module.exports = { ec };
