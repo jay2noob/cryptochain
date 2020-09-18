@@ -1,1 +1,1 @@
-const EC = require("elliptic");
+const EC = require("elliptic").ec;
