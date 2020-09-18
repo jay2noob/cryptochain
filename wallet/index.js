@@ -1,4 +1,5 @@
 const { STARTING_BALANCE } = require("../config");
+const { ec } = require("../util");
 
 class Wallet {
   constructor() {
