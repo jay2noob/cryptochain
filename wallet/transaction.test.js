@@ -31,4 +31,10 @@ describe("Transaction", () => {
       );
     });
   });
+
+  describe("input", () => {
+    it("has an `input`", () => {
+      expect(transaction).toHaveProperty("input");
+    });
+  });
 });
