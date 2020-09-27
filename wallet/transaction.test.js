@@ -44,5 +44,9 @@ describe("Transaction", () => {
     it("sets the`amount` to the `senderWallet` balance", () => {
       expect(transaction.input.amount).toEqual(senderWallet.balance);
     });
+
+    it("sets the `address` to the `senderWallet` publicKey", () => {
+      expect(transaction.input.address).toEqual(senderWallet.publicKey);
+    });
   });
 });
