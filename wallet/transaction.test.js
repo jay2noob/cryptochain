@@ -1,5 +1,6 @@
 const Transaction = require("./transaction");
 const Wallet = require("./index");
+const { verifySignature } = require("../util");
 
 describe("Transaction", () => {
   let transaction, senderWallet, recipient, amount;
@@ -47,6 +48,16 @@ describe("Transaction", () => {
 
     it("sets the `address` to the `senderWallet` publicKey", () => {
       expect(transaction.input.address).toEqual(senderWallet.publicKey);
+    });
+
+    it("signs the input", () => {
+      expect(
+        verifySignature({
+          publicKey: senderWallet.publicKey,
+          data: transaction.outputMap,
+          signature: transaction.input.signature,
+        })
+      ).toBe(true);
     });
   });
 });
