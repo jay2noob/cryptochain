@@ -39,4 +39,16 @@ describe("Wallet", () => {
       ).toBe(false);
     });
   });
+
+  describe("createTransaction()", () => {
+    describe("and the amount exceeds the balance", () => {
+      it("throws an error", () => {
+        expect(() => wallet.createTransaction()).toThrow(
+          "Amount exceeds balance"
+        );
+      });
+    });
+
+    describe("and the amount is valid", () => {});
+  });
 });
