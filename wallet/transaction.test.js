@@ -106,7 +106,7 @@ describe("Transaction", () => {
       nextRecipient = "next-recipient";
       nextAmount = 50;
 
-      transaction.output({
+      transaction.update({
         senderWallet,
         recipient: nextRecipient,
         amount: nextAmount,
