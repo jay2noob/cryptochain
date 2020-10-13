@@ -19,7 +19,7 @@ describe("TransactionPool", () => {
       transactionPool.setTransaction(transaction);
 
       expect(transactionPool.transactionMap[transaction.id])
-       .toEqual(transaction);
+       .toBe(transaction);
     });
   });
 });
