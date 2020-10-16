@@ -3,6 +3,7 @@ const express = require("express");
 const request = require("request");
 const Blockchain = require("./blockchain");
 const PubSub = require("./app/pubsub");
+const TransactionPool = require('./wallet/transaction-pool');
 
 const app = express();
 const blockchain = new Blockchain();
